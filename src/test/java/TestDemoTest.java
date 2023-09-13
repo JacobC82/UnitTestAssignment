@@ -25,6 +25,7 @@ class TestDemoTest {
 	@MethodSource("argumentsForAddPositive")
 	void assertThatTwoPositiveNumbersAreAddedCorrectly(int a, int b, int expected,
 			Boolean expectException) {
+		//Given a conditional if statement to test
 		if (!expectException) {
 			assertThat(testDemo.addPositive(a, b)).isEqualTo(expected);
 		} else {
@@ -33,9 +34,9 @@ class TestDemoTest {
 		}
 	
 	}
-		private static Stream<Arguments> argumentsForAddPositive() {
+		static Stream<Arguments> argumentsForAddPositive() {
 		return Stream.of(arguments(2,4,6, false), arguments(3,6,9,false),
-				arguments(10,-1,9,true), arguments(0,4,4,true));
+				arguments(10,1,9,true), arguments(0,4,4,true));
 	}
 		
 
@@ -47,7 +48,7 @@ class TestDemoTest {
 			
 			int fiveSquared = mockTest.randomNumberSquared();
 			
-			assertThat(fiveSquared).isEqualTo(25);
+			assertThat(fiveSquared).isEqualTo(30);
 	    	
 	    }
 
